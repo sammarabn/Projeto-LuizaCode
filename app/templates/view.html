@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Visualização</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="col-8 m-auto pt-2 pb-2 text-center">
+            <h1>Visualizar</h1>
+        </div>
+
+        <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="" class="btn btn-success">Voltar</a>
+        </div>
+
+        <div class="col-8 m-auto pt-4 pb-2 text-center">
+            <strong>Nome da Loja: </strong>{{ db.nome }}<br>
+            <strong>CNPJ: </strong>{{ db.cnpj }}<br>
+            <strong>Data de Fundação: </strong>{{ db.dataFundacao }}<br>
+        </div>
+
+        <div class="col-8 m-auto pt-4 pb-2 text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for dbi in dbp %}
+                    <tr>
+                        <td>{{ dbi.id }}</td>
+                        <td>{{ dbi.nome }}</td>
+                        <td>{{ dbi.quantidade }}</td>
+                        <td>
+                            <a href="/viewProducts/{{ db.id }}/{{ dbi.id }}/" class="btn btn-dark">Visualizar</a>
+                            <a href="/editProducts/{{ dbi.id }}/" class="btn btn-primary">Editar</a>
+                            <a href="/deleteProducts/{{ dbi.id }}/" class="btn btn-danger btnDelProd">Deletar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="/formProducts/{{ db.id }}/" class="btn btn-success">Adicionar</a>
+        </div>
+        {% load static %}
+        <script src="{% static 'script.js' %}"></script>
+    </body>
+</html>

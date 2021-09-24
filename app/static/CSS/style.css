@@ -1,0 +1,51 @@
+.body-products {
+    background-color: #086788;
+    background-attachment: fixed;/*fixo*/
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: right bottom;
+    margin: 0px 0px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+} 
+
+.body-index {
+    background-color: #8F85F2;
+    background-attachment: fixed;/*fixo*/
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: right bottom;
+    margin: 0px 0px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}     
+.bg {
+    background-color: #418B88;
+}
+
+.bg-box {
+    background: hsla(0,0%,100%,.35);
+    border-radius:50px;
+    width: 600px;
+    height: 700px;
+    
+}
+
+.lb{
+    width: 90px !important;
+}
+select {
+    appearance: none;
+    border-radius:10px;
+    width: 200px;
+    height: 35px;
+ }
+label{
+    appearance: none;
+    border-radius:10px;
+    width: 200px;
+    height: 35px;
+ }
+  

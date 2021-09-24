@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Loja(models.Model):
+    id = models.IntegerField(primary_key=True)
     cnpj = models.CharField(max_length=14, unique=True, blank=False)
     nome = models.CharField(max_length=30, blank=False)
     dataFundacao = models.DateField(blank=False)

@@ -5,8 +5,8 @@ from app.models import Loja, Produto
 # Create your views here.
 def home(request):
     data ={}
-    data['db'] = Loja.objects.all()
-    return render(request, 'index.html', data)
+    data['db'] = Loja.objects.all().values("id","cnpj", "nome")
+    return render(request, 'index.html', {"lojas": data})
 
 def form(request):
     data ={}

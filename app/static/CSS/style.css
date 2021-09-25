@@ -1,0 +1,73 @@
+.body-products {
+    background-color: #71d2f3;
+    background-attachment: fixed;/*fixo*/
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: right bottom;
+    margin: 0px 0px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+} 
+
+.body-index {
+    background-color: #59badb;
+    background-attachment: fixed;/*fixo*/
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: right bottom;
+    margin: 0px 0px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+} 
+.body-cadastro {
+    background-color: #ACCBE1;
+    background-attachment: fixed;/*fixo*/
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: right bottom;
+   
+} 
+.body-view {
+    background-color: #7191C1;
+    background-attachment: fixed;/*fixo*/
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: right bottom;
+    margin: 0px 0px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+}  
+.body-viewProducts{
+    background-color: #6386BB;
+    background-attachment: fixed;/*fixo*/
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: right bottom;
+} 
+.bg {
+    background-color: #418B88;
+}
+
+.bg-box {
+    background: hsla(0,0%,100%,.35);
+    border-radius:50px;
+    width: 600px;
+    height: 700px;
+    
+}
+
+.lb{
+    width: 90px !important;
+}
+select {
+    appearance: none;
+    border-radius:0px;
+    width: 200px;
+    height: 35px;
+ }
+
+  

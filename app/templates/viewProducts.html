@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Sobre o produto</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Visualizar produto</h1>
-        </div>
 
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="" class="btn btn-success">Voltar</a>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre o produto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
 
-        <div class="col-8 m-auto pt-4 pb-2 text-center">
-            <strong>Nome da Loja: </strong>{{ db.nome }}<br>
-            <strong>Nome do produto: </strong>{{ dbp.nome }}<br>
-            <strong>Quantidade: </strong>{{ dbp.quantidade}}<br>
-            <strong>Ref.: </strong>{{ dbp.ref}}<br>
-            <strong>Categoria: </strong>{{ dbp.categoria }}<br>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">GC Girls - StockController</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/allStores/">Lojas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/allCategories">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/allProducts">Produtos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
         </div>
-    </body>
+    </nav>
+    <div class="container-fluid mt-4">
+        <div class="card">
+            <h5 class="card-header">Dados da Categoria</h5>
+            <div class="card-body">
+                <p><strong>Nome do produto: </strong>{{ dbp.nome }}</p>
+                <p><strong>Categoria: </strong>{{ dbp.categoria }}</p>
+                <p><strong>Loja: </strong>{{ dbp.lojaPertencente }}</p>
+                <p><strong>Descrição: </strong>{{ dbp.descricao}}</p>
+                <p><strong>Quantidade: </strong>{{ dbp.quantidade}}</p>
+            </div>
+        </div>
+</body>
+
 </html>

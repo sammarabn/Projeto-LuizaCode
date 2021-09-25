@@ -11,13 +11,13 @@
 </head>
 
 <body class="body-products">
-  <div class="row d-flex justify-content-center align-self-center text-white">
+  <div class="row d-flex justify-content-center align-self-center text-black">
     <div class="col-md-4"></div>
     <div class="col-md-4 bg-box mt-5 mb-5 pb-5">
       <h1 class="text-center mb-3 mt-3 pd-entrar">Cadastrar ou Atualizar produto</h1>
 
       <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="" class="btn btn-success">Voltar</a>
+        <a href="/" class="btn btn-success">Voltar</a>
       </div>
 
       <div class="col-8 m-auto pt-4 pb-2 text-center">
@@ -54,25 +54,12 @@
 
               <div class="d-flex justify-content-center mt-5 mb-2">
                 <button type="submit" class="btn btn-danger mr-4 lb text-center"
-                  routerLink="/edit-categoria">Cancelar</button>
+                  routerLink="/">Cancelar</button>
                 <button type="submit" class="btn btn-info lb " (click)='cadastrarProduto()'>Cadastrar</button>
               </div>
 
             </div>
             <div class="col-md-4"></div>
-
-
-            <!--<div class="col-8 m-auto pt-4 pb-2 text-center">
-            <form name="form" id="form" action="{% if dbp %}/updateProducts/{{ dbp.id }}/{% else %}/createProducts/{% endif %}" method="post">
-                {% csrf_token %}
-                <div class="form-group mt-4">Loja Pertendente: {{ formProducts.lojaPertencente }}</div>
-                <div class="form-group mt-4">Nome: {{ formProducts.nome }}</div>
-                <div class="form-group mt-4">Quantidade: {{ formProducts.quantidade }}</div>
-                <div class="form-group mt-4">Referência: {{ formProducts.ref }}</div>
-                <div class="form-group mt-4">Categoria: {{ formProducts.categoria }}</div>
-                <input type="submit" class="btn btn-success" value="Salvar">
-            </form>
-          </div>-->
 
           </div>
       </div>

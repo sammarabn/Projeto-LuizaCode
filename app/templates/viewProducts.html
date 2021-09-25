@@ -1,25 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Sobre o produto</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
     </head>
-    <body>
-        <div class="col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Visualizar produto</h1>
-        </div>
+
+    <body class="body-viewProducts">
+        <div class="row d-flex justify-content-center align-self-center text-black">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 bg-box mt-5 mb-5 pb-5">
+            <h1 class="text-center mb-3 mt-3 pd-entrar">Visualizar produto</h1>
+        
 
         <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="" class="btn btn-success">Voltar</a>
+            <a href="/" class="btn btn-success">Voltar</a>
         </div>
 
         <div class="col-8 m-auto pt-4 pb-2 text-center">
-            <strong>Nome da Loja: </strong>{{ db.nome }}<br>
+            <strong>Nome da Loja: </strong>{{ db.nome }}<br> 
             <strong>Nome do produto: </strong>{{ dbp.nome }}<br>
             <strong>Quantidade: </strong>{{ dbp.quantidade}}<br>
             <strong>Ref.: </strong>{{ dbp.ref}}<br>
             <strong>Categoria: </strong>{{ dbp.categoria }}<br>
         </div>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
     </body>
 </html>

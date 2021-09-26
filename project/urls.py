@@ -15,20 +15,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home, form, create, view, edit, update, delete, formProducts, createProducts, updateProducts, viewProducts, editProducts, deleteProducts
+from app.views import allCategories, allProducts, allStores, createCategories, deleteCategories, editCategories, formCategories, home, form, create, updateCategories, view, edit, update, delete, formProducts, createProducts, updateProducts, viewCategories, viewProducts, editProducts, deleteProducts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
+    
     path('form/', form, name='form'),
+    path('allStores/', allStores, name='allStores'),
     path('create/', create, name='create'),
     path('view/<int:pk>/', view, name='view'),
     path('edit/<int:pk>/', edit, name='edit'),
     path('update/<int:pk>/', update, name='update'),
     path('delete/<int:pk>/', delete, name='delete'),
+
+    path('allCategories/', allCategories, name='allCategories'),
+    path('formCategories/<int:pk>/', formCategories, name='formCategories'),
+    path('createCategories/', createCategories, name='createCategories'),
+    path('viewCategories/<int:pkc>/', viewCategories, name='viewCategories'),
+    path('editCategories/<int:pkc>/', editCategories, name='editCategories'),
+    path('updateCategories/<int:pkc>/', updateCategories, name='updateCategories'),
+    path('deleteCategories/<int:pkc>/', deleteCategories, name='deleteCategories'),
+    
+    path('allProducts/', allProducts, name='allProducts'),
     path('formProducts/<int:pk>/', formProducts, name='formProducts'),
     path('createProducts/', createProducts, name='createProducts'),
-    path('viewProducts/<int:pkl>/<int:pkp>/', viewProducts, name='viewProducts'),
+    path('viewProducts/<int:pkp>/', viewProducts, name='viewProducts'),
     path('editProducts/<int:pkp>/', editProducts, name='editProducts'),
     path('updateProducts/<int:pkp>/', updateProducts, name='updateProducts'),
     path('deleteProducts/<int:pkp>/', deleteProducts, name='deleteProducts')

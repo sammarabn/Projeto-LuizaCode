@@ -11,7 +11,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">GC Girls - StockController</a>
+            <a class="navbar-brand" href="/"><img src="../static/images/GC-logo.png" alt="logo" width="160"
+                    height="93"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -36,86 +37,91 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid mt-4">
-        <div class="card">
-            <h5 class="card-header">Dados da loja</h5>
-            <div class="card-body">
-                <p class="card-text"><strong>Razão social: </strong>{{ db.nome }}</p>
-                <p class="card-text"><strong>CNPJ: </strong>{{ db.cnpj }}</p>
-                <p class="card-text"><strong><strong>Data de Fundação: </strong>{{ db.dataFundacao }}</p>
+    <main>
+        <div class="container-fluid mt-4">
+            <div class="card">
+                <h5 class="card-header">Dados da loja</h5>
+                <div class="card-body">
+                    <p class="card-text"><strong>Razão social: </strong>{{ db.nome }}</p>
+                    <p class="card-text"><strong>CNPJ: </strong>{{ db.cnpj }}</p>
+                    <p class="card-text"><strong><strong>Data de Fundação: </strong>{{ db.dataFundacao }}</p>
+                </div>
             </div>
-        </div>
-        <div class="card mt-4">
-            <h5 class="card-header">Categorias da loja {{db.nome}}</h5>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Loja</th>
-                            <th scope="col">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for dbi in dbc %}
-                        <tr>
-                            <td>{{ dbi.id }}</td>
-                            <td>{{ dbi.nome }}</td>
-                            <td>{{ dbi.lojaPertencente }}</td>
-                            <td>
-                                <a href="/viewCategories/{{ dbi.id }}/" class="btn btn-dark">Visualizar</a>
-                                <a href="/editCategories/{{ dbi.id }}/" class="btn btn-primary">Editar</a>
-                                <a href="/deleteCategories/{{ dbi.id }}/" class="btn btn-danger btnDelProd">Deletar</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+            <div class="card mt-4">
+                <h5 class="card-header">Categorias da loja {{db.nome}}</h5>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Loja</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dbi in dbc %}
+                            <tr>
+                                <td>{{ dbi.id }}</td>
+                                <td>{{ dbi.nome }}</td>
+                                <td>{{ dbi.lojaPertencente }}</td>
+                                <td>
+                                    <a href="/viewCategories/{{ dbi.id }}/" class="btn btn-dark">Visualizar</a>
+                                    <a href="/editCategories/{{ dbi.id }}/" class="btn btn-primary">Editar</a>
+                                    <a href="/deleteCategories/{{ dbi.id }}/"
+                                        class="btn btn-danger btnDelProd">Deletar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-fluid mt-1 mb-2">
+                    <a href="/formCategories/{{db.id}}" class="btn btn-success">Adicionar Nova Categoria</a>
+                </div>
             </div>
-            <div class="container-fluid mt-1 mb-2">
-                <a href="/formCategories/{{db.id}}" class="btn btn-success">Adicionar Nova Categoria</a>
-            </div>
-        </div>
 
-        <div class="card mt-4">
-            <h5 class="card-header">Produtos da loja {{db.nome}}</h5>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for dbi in dbp %}
-                        <tr>
-                            <td>{{ dbi.id }}</td>
-                            <td>{{ dbi.nome }}</td>
-                            <td>{{ dbi.categoria }}</td>
-                            <td>{{ dbi.quantidade }}</td>
-                            <td>
-                                <a href="/viewProducts/{{ dbi.id }}/" class="btn btn-dark">Visualizar</a>
-                                <a href="/editProducts/{{ dbi.id }}/" class="btn btn-primary">Editar</a>
-                                <a href="/deleteProducts/{{ dbi.id }}/" class="btn btn-danger btnDelProd">Deletar</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            <div class="container-fluid mt-1 mb-2">
-                <a href="/formProducts/{{ db.id }}/" class="btn btn-success">Adicionar Novo Produto</a>
+            <div class="card mt-4">
+                <h5 class="card-header">Produtos da loja {{db.nome}}</h5>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dbi in dbp %}
+                            <tr>
+                                <td>{{ dbi.id }}</td>
+                                <td>{{ dbi.nome }}</td>
+                                <td>{{ dbi.categoria }}</td>
+                                <td>{{ dbi.quantidade }}</td>
+                                <td>
+                                    <a href="/viewProducts/{{ dbi.id }}/" class="btn btn-dark">Visualizar</a>
+                                    <a href="/editProducts/{{ dbi.id }}/" class="btn btn-primary">Editar</a>
+                                    <a href="/deleteProducts/{{ dbi.id }}/"
+                                        class="btn btn-danger btnDelProd">Deletar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-fluid mt-1 mb-2">
+                    <a href="/formProducts/{{ db.id }}/" class="btn btn-success">Adicionar Novo Produto</a>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
+    </main>
     {% load static %}
     <script src="{% static 'script.js' %}"></script>
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from app.models import Loja, Produto
+from app.models import Categoria, Loja, Produto
 
 # Create the form class.
 class LojaForm(ModelForm):
@@ -7,7 +7,13 @@ class LojaForm(ModelForm):
         model = Loja
         fields = ['cnpj', 'nome', 'dataFundacao']
 
+class CategoriaForm(ModelForm):
+
+    class Meta:
+        model = Categoria
+        fields = ['lojaPertencente', 'nome']
+
 class ProdutoForm(ModelForm):
     class Meta:
         model = Produto
-        fields = ['lojaPertencente', 'nome', 'quantidade', 'ref', 'categoria']
+        fields = ['lojaPertencente', 'categoria', 'nome', 'quantidade', 'descricao']

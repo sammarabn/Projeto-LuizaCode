@@ -1,44 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Lojas</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="col-8 m-auto pt-2 pb-2 text-center">
-            <h1>CRUD LOJAS</h1>
-        </div>
 
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="/form" class="btn btn-success">Adicionar</a>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>GC Girls - StockController</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="icon" href="../static/favicon.ico" </head>
 
-        <div class="col-8 m-auto pt-4 pb-2 text-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for dbi in db %}
-                    <tr>
-                        <td>{{ dbi.id }}</td>
-                        <td>{{ dbi.nome }}</td>
-                        <td>
-                            <a href="/view/{{ dbi.id }}/" class="btn btn-dark">Visualizar</a>
-                            <a href="/edit/{{ dbi.id }}/" class="btn btn-primary">Editar</a>
-                            <a href="/delete/{{ dbi.id }}/" class="btn btn-danger btnDel">Deletar</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="../static/images/GC-logo.png" alt="logo" width="160" height="93"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="allStores/">Lojas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="allCategories/">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="allProducts/">Produtos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="container-xxl py-4">
+                <div class="p-5 mb-4 bg-light rounded-3">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-8 fw-bold">Com a GC Girls - StockController você pode</h1>
+                        <p class="col-md-8 fs-4">controlar seu estoque de forma rápida e direta. Com poucos passos seu
+                            estoque fica organizado e ao alcance de suas mãos.</p>
+                        <a class="btn btn-secondary btn-lg" href="allStores/">Comece agora</a>
+                    </div>
+                </div>
+
+                <div class="row align-items-md-stretch">
+                    <div class="col-md-6">
+                        <div class="h-100 p-5 text-white bg-dark rounded-3">
+                            <h2>Conheça nossos serviços</h2>
+                            <p>Aqui você tem acesso a nossa documentação descrevendo cada funcionalidade.</p>
+                            <button class="btn btn-outline-light" type="button">Leia agora</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="h-100 p-5 bg-light border rounded-3">
+                            <h2>Breve história</h2>
+                            <p>A GC Girls - StockController surgiu como trabalho de conclusão de curso do programa de
+                                aceleração em GCP do Luizalabs em parceria com a Gama Academy.</p>
+                            <button class="btn btn-outline-secondary" type="button">Saiba mais</button>
+                        </div>
+                    </div>
+
+                    <div class="p-5 mb-4 bg-light rounded-3 mt-4">
+                        <div class="container-fluid py-5">
+                            <h1 class="display-5 fw-bold">Desenvolvedoras</h1>
+                            <p class="col-md-8 fs-4">Quem faz a GC Girls - StockController acontecer:</p>
+
+                            <div class="container row row-cols-5">
+                                <div class="col">
+                                    <div class="card mb-2">
+                                        <img src="../static/images/Ana.jpg" class="card-img-top" alt="Ana Veronica"
+                                            style="max-height: 16rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ana Verônica</h5>
+                                            <p class="card-text">Desenvolvedora fullstack.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card mb-2">
+                                        <img src="../static/images/Karolina.jpeg" class="card-img-top" alt="Karolina"
+                                            style="max-height: 16rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Karolina Queiroz</h5>
+                                            <p class="card-text">Desenvolvedora fullstack.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card mb-2">
+                                        <img src="../static/images/Michelle.jpg" class="card-img-top" alt="Michelle"
+                                            style="max-height: 16rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Michelle Bonanno</h5>
+                                            <p class="card-text">Desenvolvedora frontend/UX.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card mb-2">
+                                        <img src="../static/images/Rachel.jpg" class="card-img-top" alt="Rachel"
+                                            style="max-height: 16rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Rachel Carvalho</h5>
+                                            <p class="card-text">Desenvolvedora fullstack.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card mb-2">
+                                        <img src="../static/images/Sammara.jpeg" class="card-img-top" alt="Sammara"
+                                            style="max-height: 16rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sammara Nunes</h5>
+                                            <p class="card-text">Desenvolvedora fullstack.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="pt-3 mt-4 text-muted border-top">
+                    &copy; GC Girls - StockController - 2021
+                </footer>
+            </div>
+        </main>
         {% load static %}
         <script src="{% static 'script.js' %}"></script>
-    </body>
+    </div>
+</body>
+
 </html>

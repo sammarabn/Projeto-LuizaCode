@@ -1,6 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <title>GC Girls - StockController</title>
@@ -112,5 +112,53 @@
         <script src="{% static 'script.js' %}"></script>
     </div>
 </body>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Lojas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    </head>
+    <body class="body-index">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+              <h1 class='text-center'>Lista das Lojas</h1>
+            </div>
+        </div>
+
+        <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/form" class="btn btn-success">Adicionar</a>
+        </div>
+
+        <div class="row mt-3 mb-5 d-flex justify-content-center">
+            <div class="col-md-6">
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col" class="text-right">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for dbi in db %}
+                    <tr>
+                        <td>{{ dbi.id }}</td>
+                        <td>{{ dbi.nome }}</td>
+                        <td>
+                            <a href="/view/{{ dbi.id }}/" class="btn btn-dark">Visualizar</a>
+                            <a href="/edit/{{ dbi.id }}/" class="btn btn-primary">Editar</a>
+                            <a href="/delete/{{ dbi.id }}/" class="btn btn-danger btnDel">Deletar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% load static %}
+        <script src="{% static 'script.js' %}"></script>
+    </div>
+    </body>
 
 </html>

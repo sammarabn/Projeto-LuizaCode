@@ -1,5 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
     <head>
         <meta charset="UTF-8">
         <title>Cadastrar Produto</title>
@@ -26,4 +28,69 @@
             </form>
         </div>
     </body>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Produto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body class="body-products">
+  <div class="row d-flex justify-content-center align-self-center text-black">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 bg-box mt-5 mb-5 pb-5">
+      <h1 class="text-center mb-3 mt-3 pd-entrar">Cadastrar ou Atualizar produto</h1>
+
+      <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/" class="btn btn-success">Voltar</a>
+      </div>
+
+      <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <form name="form" id="form"
+          action="{% if dbp %}/updateProducts/{{ dbp.id }}/{% else %}/createProducts/{% endif %}" method="post">
+          {% csrf_token %}
+
+
+          <div class="form-group pd-laterais">
+            <p>Nome do produto: </p>
+            <label type="text" for="formProducts.nome" > {{ formProducts.nome }} </label>
+          </div>
+
+          <div class="form-group pd-laterais">
+            <p>Loja Pertencente:</p>
+            <label type="text" class="label" for="formProducts.lojaPertencente">{{ formProducts.lojaPertencente }}</label>
+      
+          </div>
+
+          <div class="form-group pd-laterais">
+            <p>Quantidade:</p>
+            <label type="number" min="0" max="10000" step="01" for="formProducts.quantidade">{{ formProducts.quantidade }}</label>
+          </div>
+
+          <div class="form-group pd-laterais">
+            <p>Referência:</p>
+            <label for="formProducts.ref">{{ formProducts.ref }}</label>
+          </div>
+
+            <div class="form-group pd-laterais">
+              <p>Categoria:</p>
+              <label type="text" for="formProducts.categoria">{{ formProducts.categoria }}</label>
+            </div>
+
+              <div class="d-flex justify-content-center mt-5 mb-2">
+                <button type="submit" class="btn btn-danger mr-4 lb text-center"
+                  routerLink="/">Cancelar</button>
+                <button type="submit" class="btn btn-info lb " (click)='cadastrarProduto()'>Cadastrar</button>
+              </div>
+
+            </div>
+            <div class="col-md-4"></div>
+
+          </div>
+      </div>
+</body>
+
 </html>

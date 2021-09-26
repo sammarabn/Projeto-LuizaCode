@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +7,11 @@
     <title>Sobre o produto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+
 </head>
 
-<body>
+<body class="body-viewProducts">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/"><img src="../static/images/GC-logo.png" alt="logo" width="160"
@@ -39,7 +42,7 @@
     </nav>
     <div class="container-fluid mt-4">
         <div class="card">
-            <h5 class="card-header">Dados da Categoria</h5>
+            <h5 class="card-header">Dados do Produto</h5>
             <div class="card-body">
                 <p><strong>Nome do produto: </strong>{{ dbp.nome }}</p>
                 <p><strong>Categoria: </strong>{{ dbp.categoria }}</p>

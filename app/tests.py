@@ -22,11 +22,12 @@ class TestLojaViews(TestCase):
 
         lst_lojas_resposta = dados_resposta["lojas"]
 
+
         for loja_resposta in lst_lojas_resposta:
             
             encontrou = False
             for loja_inserida in self.lojas_inseridas:
-                if loja_resposta["id"] == loja_inserida.id:
+                if int(loja_resposta["id"]) == loja_inserida.id:
                     encontrou = True
                     self.assertEqual(loja_resposta["nome"],loja_inserida.nome, "Nome inesperado ao listar loja")
             self.assertTrue(encontrou, f"A loja {loja_resposta} não foi encontrada")

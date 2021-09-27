@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,39 +7,40 @@
     <title>GC Girls - StockController</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body class="body-view">
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="../static/images/GC-logo.png" alt="logo" width="160" height="93"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/allStores">Lojas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/allCategories">Categorias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-current="page" href="/allProducts">Produtos</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+          <a class="navbar-brand" href="/"><img src="{% static 'images/GC-logo.png' %}" alt="logo" width="160" height="93"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/allStores">Lojas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/allCategories">Categorias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/allProducts">Produtos</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="pesquisar" aria-label="Search">
+              <button class="btn btn-secondary" type="submit">Pesquisar</button>
+          </form>
+          </div>
         </div>
-    </nav>
+      </nav>
     <main>
         <div class="container-fluid">
-            <div class="card mt-4">
+            <div class="card mt-4 w-75 m-auto">
                 <div class="card-header">
                     <h4 class="card-title"> Produtos cadastrados</h4>
                 </div>
@@ -48,9 +50,9 @@
                         precise adicionar um novo produto acesse a loja a qual você deseja incluir o novo produto.</p>
                     <a href="/allStores" class="btn btn-success">Ver lojas</a>
                     <hr />
-                    <div class="col-8 m-auto pt-4 pb-2 text-center">
+                    <div class="col m-auto pt-4 pb-2 text-center">
                         <h5>Lista de todos os produtos cadastrados</h5>
-                        <table class="table">
+                        <table class="table w-100">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -72,8 +74,8 @@
                                     <td>{{ dbp.descricao }}</td>
                                     <td>{{ dbp.quantidade }}</td>
                                     <td>
-                                        <a href="/viewProducts/{{ dbp.id }}/" class="btn btn-dark">Visualizar</a>
-                                        <a href="/editProducts/{{ dbp.id }}/" class="btn btn-primary">Editar</a>
+                                        <a href="/viewProducts/{{ dbp.id }}/" class="btn btn-dark" style="margin-inline:5px;">Visualizar</a>
+                                        <a href="/editProducts/{{ dbp.id }}/" class="btn btn-primary" style="margin-inline:15px;">Editar</a>
                                         <a href="/deleteProducts/{{ dbp.id }}/"
                                             class="btn btn-danger btnDel">Deletar</a>
                                     </td>

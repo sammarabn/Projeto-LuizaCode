@@ -22,7 +22,7 @@ Foi utilizado Django, SQLite, Python, Docker.
 
 ##### Desenvolvedoras: 
 Grupo 8:
-#####[Ana Verônica] [https://github.com/Anaveronica3001]
-Karolina Queiroz [https://github.com/karolinaq20]
-Rachel Carvalho [https://github.com/RachCarvalho]
-Sammara Nunes [https://github.com/sammarabn]
+#####[Ana Verônica] (https://github.com/Anaveronica3001)
+#####[Karolina Queiroz] (https://github.com/karolinaq20)
+#####[Rachel Carvalho] (https://github.com/RachCarvalho)
+#####[Sammara Nunes] (https://github.com/sammarabn)

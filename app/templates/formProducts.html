@@ -8,22 +8,47 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+  <link rel="icon" href="../static/favicon.ico">
 </head>
 
 <body class="body-products">
+  <nav class="navbar navbar-expand-lg navbar-light bg-nav ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="../static/images/GC-logo.png" alt="logo" width="160" height="93"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="allStores/">Lojas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="allCategories/">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="allProducts/">Produtos</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="pesquisar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
   <div class="row d-flex justify-content-center align-self-center text-black">
     <div class="col-md-4"></div>
-    <div class="col-md-4 bg-box mt-5 mb-5 pb-5">
+    <div class="col-md-4 bg-box mt-5 mb-5 pb-5" style="padding-top: 60px">
       <h1 class="text-center mb-3 mt-3 pd-entrar">Cadastrar ou Atualizar produto</h1>
-
-      <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/" class="btn btn-success">Voltar</a>
-      </div>
-      <form name="form" id="form"
-        action="{% if dbp %}/updateProducts/{{ dbp.id }}/{% else %}/createProducts/{% endif %}" method="post">
+      <div class="col-8 m-auto pt-4 pb-2 text-center">
+      <form name="form" id="form" action="{% if dbp %}/updateProducts/{{ dbp.id }}/{% else %}/createProducts/{% endif %}" method="post">
         {% csrf_token %}
 
-        <div class="form-group pd-laterais">
+          <div class="form-group pd-laterais">
           <p>Nome do produto: </p>
           <label type="text" for="formProducts.nome"> {{ formProducts.nome }} </label>
         </div>
@@ -50,11 +75,12 @@
         </div>
 
         <div class="d-flex justify-content-center mt-5 mb-2">
-          <button type="submit" class="btn btn-danger mr-4 lb text-center" routerLink="/">Cancelar</button>
+          <button type="submit" class="btn btn-danger mr-4 lb text-center" routerLink="/" style="margin-inline:23px">Cancelar</button>
           <button type="submit" class="btn btn-info lb " (click)='cadastrarProduto()'>Cadastrar</button>
         </div>
       </form>
     </div>
+   </div>
     <div class="col-md-4"></div>
 
   </div>

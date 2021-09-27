@@ -1,5 +1,5 @@
 .body-products {
-    background-color: #71d2f3;
+    background-color: #e1d3c6;
     background-attachment: fixed;/*fixo*/
     background-size: cover;
     background-repeat: repeat;
@@ -11,7 +11,7 @@
 } 
 
 .body-index {
-    background-color: #59badb;
+    background-color: #e1d3c6;
     background-attachment: fixed;/*fixo*/
     background-size: cover;
     background-repeat: repeat;
@@ -22,7 +22,7 @@
     flex-direction: column;
 } 
 .body-cadastro {
-    background-color: #ACCBE1;
+    background-color: #e1c6c6;
     background-attachment: fixed;/*fixo*/
     background-size: cover;
     background-repeat: repeat;
@@ -30,7 +30,7 @@
    
 } 
 .body-view {
-    background-color: #7191C1;
+    background-color: #e1d3c6;
     background-attachment: fixed;/*fixo*/
     background-size: cover;
     background-repeat: repeat;
@@ -42,14 +42,14 @@
 
 }  
 .body-viewProducts{
-    background-color: #6386BB;
+    background-color: #e1d3c6;
     background-attachment: fixed;/*fixo*/
     background-size: cover;
     background-repeat: repeat;
     background-position: right bottom;
 } 
 .bg {
-    background-color: #418B88;
+    background-color: #e1d3c6;
 }
 
 .bg-box {
@@ -68,6 +68,22 @@ select {
     border-radius:0px;
     width: 200px;
     height: 35px;
+ }
+
+ .bg-pink{
+  background-color: #ec5e87
+ }
+
+ .bg-card1{
+  background-color: #e8829f
+ }
+
+ .bg-card3{
+  background-color: #e69595
+ }
+
+ .bg-nav{
+  background-color: #cda099;
  }
 
  .cor-jumb{
@@ -104,6 +120,7 @@ select {
       width: 220px;
       height: 276px;
       perspective: 1000px;
+      padding-left: 18px;
     }
     
     .flip-card-inner {
@@ -134,7 +151,7 @@ select {
     }
     
     .flip-card-back {
-      background-color: #cda099;
+      background-color: #ec5e87;
       color: white;
       transform: rotateY(180deg);
     }

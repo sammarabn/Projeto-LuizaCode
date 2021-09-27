@@ -8,14 +8,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
-  <link rel="icon" href="../static/favicon.ico">
+  <link rel="icon" href="{% static 'favicon.ico' %}">
 </head>
 
 <body class="body-index">
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-nav ">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="../static/images/GC-logo.png" alt="logo" width="160" height="93"></a>
+        <a class="navbar-brand" href="/"><img src="{% static 'images/GC-logo.png' %}" alt="logo" width="160" height="93"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,19 +23,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="allStores/">Lojas</a>
+              <a class="nav-link active" aria-current="page" href="/allStores">Lojas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="allCategories/">Categorias</a>
+              <a class="nav-link active" aria-current="page" href="/allCategories">Categorias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="allProducts/">Produtos</a>
+              <a class="nav-link active" aria-current="page" href="/allProducts">Produtos</a>
             </li>
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            <input class="form-control me-2" type="search" placeholder="pesquisar" aria-label="Search">
+            <button class="btn btn-secondary" type="submit">Pesquisar</button>
+        </form>
         </div>
       </div>
     </nav>
@@ -43,8 +43,8 @@
       <div class="container-xxl py-4">
         <div class="p-5 mb-4 bg-card1 rounded-3">
           <div class="container-fluid py-5">
-            <h1 class="display-8 fw-bold">Com a GC Girls - StockController você pode</h1>
-            <p class="col-md-8 fs-4">controlar seu estoque de forma rápida e direta. Com poucos passos seu
+            <h1 class="display-8 fw-bold">Com a GC Girls - StockController você pode:</h1>
+            <p class="col-md-8 fs-4">Controlar seu estoque de forma rápida e direta. Com poucos passos seu
               estoque fica organizado e ao alcance de suas mãos.</p>
             <a class="btn btn-secondary btn-lg" href="allStores/">Comece agora</a>
           </div>
@@ -55,7 +55,7 @@
             <div class="h-100 p-5 text-white bg-pink rounded-3">
               <h2>Conheça nossos serviços</h2>
               <p>Aqui você tem acesso a nossa documentação descrevendo cada funcionalidade.</p>
-              <button class="btn btn-outline-light" type="button">Leia agora</button>
+              <button class="btn btn-secondary" type="button">Leia agora</button>
             </div>
           </div>
           <div class="col-md-6">
@@ -63,7 +63,7 @@
               <h2>Breve história</h2>
               <p>A GC Girls - StockController surgiu como trabalho de conclusão de curso do programa de
                 aceleração em GCP do Luizalabs em parceria com a Gama Academy.</p>
-              <button class="btn btn-outline-secondary" type="button">Saiba mais</button>
+              <button class="btn btn-secondary" type="button">Saiba mais</button>
             </div>
           </div>
         </div>
@@ -91,9 +91,9 @@
               <p>Desenvolvedora</p>
               <p class="mb-2">Full-Stack</p>
               <div class="row justify-content-center mt-5" style="display: block!important;">
-                <a href="" target="_blank"> <img class="mr-4 " width="40px" height="40px"
+                <a href="https://github.com/Anaveronica3001" target="_blank"> <img class="mr-4 " width="40px" height="40px"
                     src="../static/images/github.png"></a>
-                <a href="" target="_blank"> <img width="40px" height="40px"
+                <a href="https://www.linkedin.com/in/ana-ver%C3%B4nica-nascimento-cruz-1896a0158/" target="_blank"> <img width="40px" height="40px"
                     src="../static/images/logotipo-do-linkedin.png"></a>
               </div>
             </div>
